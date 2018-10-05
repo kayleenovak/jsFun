@@ -26,8 +26,7 @@ const turingPrompts = {
 
         return newInstructor
     });
-
-    result;
+    return result
 
     // Annotation:
     // 1) Given: Array
@@ -44,7 +43,7 @@ const turingPrompts = {
       })
       let numberOfTeachers = instructorMod.length;
       let studentsPerTeacher = cohort.studentCount / numberOfTeachers;
-      let newCohort = `cohort${cohort.cohort}:`
+      let newCohort = `cohort${cohort.cohort}`
       result[newCohort] = studentsPerTeacher;
       return result;
     }, {});
@@ -272,7 +271,7 @@ const cakePrompts = {
     // 1) Given: Array
     // 2) Need: Array
     // 3) Use: Reduce
-  }
+  },
 
   groceryList() {
     // I need to make a grocery list. Please give me an object where the keys are
@@ -486,7 +485,7 @@ const bossPrompts = {
     }, 0)
   }
 })
-
+  return result
     // Annotation:
     // Write your annotation here as a comment
   }

@@ -1,0 +1,249 @@
+
+> jsFun@1.0.0 test /Users/kayleebunce/Documents/Turing/jsFun
+> ./node_modules/mocha/bin/mocha test/ --reporter dot --require mocha-clean
+
+
+
+  ․․,!․․!․!,․․․․!․․!․․!!!․!!!․․!!․C: Ben
+A: Ben
+B: CardiB
+D: CardiB
+!A: 75
+B: 64
+C: 64
+D: 30
+․A: Yo
+B: Hey
+C: Hey
+D: Hello
+․A: hi
+B: welcome
+C: welcome
+D: howdy
+․C: Brittany
+A: Nathaniel
+B: Nathaniel
+D: Brittany
+․A: Spot
+B: Spot
+C: Biscuit
+D: Biscuit
+E: Biscuit
+․!A: 4
+!A: 75
+B: 0
+C: 75
+D: 80
+A: 55
+B: 0
+C: 55
+E: 55
+․A: ketchup sandwich
+D: gouda
+B: undefined
+C: not a mediocre sandwich
+E: not a mediocre sandwich
+F: National Treasure
+․A: 7
+B: 7
+․A: 95
+B: 90
+C: 90
+․A: 5
+B: 6
+!E: Pam
+A: Pam
+B: Pam
+C: Louisa
+D: Louisa
+F: Louisa
+․․
+
+  28 passing (34ms)
+  2 pending
+  17 failing
+
+  1) CONTEXT
+       exerciseD:
+
+      AssertionError: expected 'dog' to equal 'global window object'
+      + expected - actual
+
+      -dog
+      +global window object
+      
+      at Context.it (test/context-test.js:22:23)
+
+  2) CONTEXT
+       exerciseG:
+
+      AssertionError: expected 'instance of Game' to equal 'global window object'
+      + expected - actual
+
+      -instance of Game
+      +global window object
+      
+      at Context.it (test/context-test.js:37:23)
+
+  3) CONTEXT
+       exerciseI:
+     AssertionError: expected [ Array(4) ] to equal 'poets'
+      at Context.it (test/context-test.js:47:23)
+
+  4) PROTOTYPES
+       Club Prompts
+         membersBelongingToClubs:
+     AssertionError: expected { Object (Louisa, Pam, ...) } to deeply equal undefined
+      at Context.it (test/prototype-test.js:35:30)
+
+  5) PROTOTYPES
+       Class Prompts
+         totalCapacities:
+
+      AssertionError: expected { feCapacity: 110, beCapacity: 96 } to deeply equal { FE: 110, BE: 96 }
+      + expected - actual
+
+       {
+      -  "beCapacity": 96
+      -  "feCapacity": 110
+      +  "BE": 96
+      +  "FE": 110
+       }
+      
+      at Context.it (test/prototype-test.js:56:30)
+
+  6) PROTOTYPES
+       Kitty Prompts
+         orangeKittyNames:
+     ReferenceError: kitties is not defined
+      at Object.orangeKittyNames (prototypes/index.js:515:20)
+      at Context.it (test/prototype-test.js:77:35)
+
+  7) PROTOTYPES
+       Kitty Prompts
+         sortByAge:
+     ReferenceError: kitties is not defined
+      at Object.sortByAge (prototypes/index.js:532:20)
+      at Context.it (test/prototype-test.js:82:35)
+
+  8) PROTOTYPES
+       Kitty Prompts
+         growUp:
+     ReferenceError: kitties is not defined
+      at Object.growUp (prototypes/index.js:558:20)
+      at Context.it (test/prototype-test.js:87:35)
+
+  9) PROTOTYPES
+       Astronomy Prompts
+         starsInConstellations:
+     AssertionError: expected 'REPLACE WITH YOUR RESULT HERE' to deeply equal [ Array(2) ]
+      at Context.it (test/prototype-test.js:104:30)
+
+  10) PROTOTYPES
+       Astronomy Prompts
+         starsByColor:
+     AssertionError: expected 'REPLACE WITH YOUR RESULT HERE' to deeply equal { Object (blue, white, ...) }
+      at Context.it (test/prototype-test.js:109:30)
+
+  11) PROTOTYPES
+       Astronomy Prompts
+         constellationsStarsExistIn:
+     AssertionError: expected 'REPLACE WITH YOUR RESULT HERE' to deeply equal [ Array(11) ]
+      at Context.it (test/prototype-test.js:114:30)
+
+  12) PROTOTYPES
+       Cake Prompts
+         stockPerCake:
+
+      AssertionError: expected [ Array(6) ] to deeply equal [ Array(6) ]
+      + expected - actual
+
+       [
+      -  [undefined]
+      -  [undefined]
+      -  [undefined]
+      -  [undefined]
+      -  [undefined]
+      -  [undefined]
+      +  {
+      +    "flavor": "dark chocolate"
+      +    "inStock": 15
+      +  }
+      +  {
+      +    "flavor": "yellow"
+      +    "inStock": 14
+      +  }
+      +  {
+      +    "flavor": "white chiffon"
+      +    "inStock": 0
+      +  }
+      +  {
+      +    "flavor": "butter rum"
+      +    "inStock": 9
+      +  }
+      +  {
+      +    "flavor": "vanilla"
+      +    "inStock": 21
+      +  }
+      +  {
+      +    "flavor": "honey"
+      +    "inStock": 0
+      +  }
+       ]
+      
+      at Context.it (test/prototype-test.js:132:30)
+
+  13) PROTOTYPES
+       Cake Prompts
+         totalInventory:
+     AssertionError: expected undefined to deeply equal 59
+      at Context.it (test/prototype-test.js:137:30)
+
+  14) SCOPE
+       exerciseA:
+
+      AssertionError: expected [ Array(4) ] to deeply equal [ Array(4) ]
+      + expected - actual
+
+       [
+         {
+      -    "C": "Ben"
+      -  }
+      -  {
+           "A": "Ben"
+         }
+         {
+           "B": "CardiB"
+         }
+         {
+      -    "D": "CardiB"
+      +    "C": "CardiB"
+         }
+      +  {
+      +    "D": "Paul"
+      +  }
+       ]
+      
+      at Context.it (test/scope-test.js:7:28)
+
+  15) SCOPE
+       exerciseG:
+     ReferenceError: fruit is not defined
+      at eatFruit (scope/index.js:249:31)
+      at Object.exerciseG (scope/index.js:259:5)
+      at Context.it (test/scope-test.js:67:26)
+
+  16) SCOPE
+       exerciseH:
+     AssertionError: expected 'REPLACE WITH YOUR RESULT HERE' to deeply equal [ Array(5) ]
+      at Context.it (test/scope-test.js:78:28)
+
+  17) SCOPE
+       exerciseM:
+     ReferenceError: num is not defined
+      at second (scope/index.js:473:27)
+      at Object.exerciseM (scope/index.js:478:5)
+      at Context.it (test/scope-test.js:131:26)
+
+
+

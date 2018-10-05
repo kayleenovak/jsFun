@@ -12,22 +12,22 @@ const scope = {
     }
 
       function beautifyPerson() {
-        console.log('A: 'personB) //console.log 'Ben'
+        console.log('A: ' + personB) //console.log 'Ben'
         
         if (personB.includes('B')) {
           personB = person; //personB = 'CardiB'
           personC = personB; //personC = 'CardiB'
-          console.log('B: 'personC) // 'CardiB'
+          console.log('B: ' + personC) // 'CardiB'
         }
       }
 
       personC = personA; //personC now is assigned to 'Paul'
 
-    console.log('C: 'personB); // Will console.log 'Ben'
+    console.log('C: ' + personB); // Will console.log 'Ben'
 
     changePerson();
 
-    console.log('D: 'personC); // 'CardiB'
+    console.log('D: ' + personC); // 'CardiB'
 
     const result = [
     {'C': 'Ben'}, 
@@ -37,7 +37,7 @@ const scope = {
     ];
 
     return result;
-  }
+  },
 
     // Annotation:
     // On line 3 we are declaring a variable called personA and assigning it to 'Paul', on line 4 we are declaring a variable called personB and assigining it to 'Ben', and on line 5 we are declaring a variable called personC and assigning it to 'Tom'. On line 7 we are declaring a function called changePerson. Since changePerson is not being invoked, we jump down to line 13 where we are declaring a function called beautifyPerson. Since beautifyPerson is not being invoked, we jump down to line 23 where we are reassigining the variable personC to the value of personA, which is 'Paul'. On line 25, we are console logging personB, which will log 'Ben'. On line 27 we are invoking the changePerson function. The change person starts with an if statement on line 8. If personA is strictly equal to 'Paul' then reassign person to 'CardiB' and invoke the beautifyPerson function. The beautifyPerson function, on line 14, console logs personB, which logs 'Ben'. If personB, includes 'B', which it does, then reassign personB to the value of person, which is 'CardiB', reassign personC to the value of personB, which is 'CardiB', and then console log personC, which will log 'CardiB'. The beautifyPerson function is now complete. We jump down to line 29 where we console log person C, which will log 'CardiB'
@@ -91,22 +91,22 @@ const scope = {
         let greeting = 'Howdy';
       }
 
-      console.log('A: ' greeting) // 'Yo'
+      console.log('A: ' + greeting) // 'Yo'
 
       function newPhrase() {
         greeting = 'Hey';
 
-        console.log('B: ' greeting) // 'Hey'
+        console.log('B: ' + greeting) // 'Hey'
       }
 
       newPhrase();
 
-      console.log('C: ' greeting) // 'Hey'
+      console.log('C: ' + greeting) // 'Hey'
     }
 
     greetingFunction();
 
-    console.log('D: ' greeting) // 'Hello'
+    console.log('D: ' + greeting) // 'Hello'
 
     const result = [
     {'A': 'Yo'}, 
@@ -130,22 +130,22 @@ const scope = {
         let greeting = 'hello';
       }
 
-      console.log('A: ' greeting) // 1st - 'hi'
+      console.log('A: ' + greeting) // 1st - 'hi'
 
       const newGreeting = ()  => {
         greeting = 'welcome';
 
-        console.log('B: ' greeting) // 2nd - 'welcome' 
+        console.log('B: ' + greeting) // 2nd - 'welcome' 
       }
 
       newGreeting();
 
-      console.log('C: ' greeting) // 3rd - 'welcome'
+      console.log('C: ' + greeting) // 3rd - 'welcome'
     }
 
     greetingGenerator();
 
-    console.log('D: ' greeting) // 4th = 'howdy'
+    console.log('D: ' + greeting) // 4th = 'howdy'
 
     const result = [
     {'A': 'hi'}, 
@@ -392,7 +392,7 @@ const scope = {
     {'B': undefined},
     {'C': 'not a mediocre sandwich'},
     {'E': 'not a mediocre sandwich'}, 
-    {'F': 'National Teasure'}
+    {'F': 'National Treasure'}
     ];
     return result;
 
