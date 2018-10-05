@@ -316,27 +316,36 @@ const scope = {
     var hunger = 100;
 
     function eatSnack() {
-      hunger -= 25;
-      // Log A: hunger
+      hunger -= 25; // hunger -> 75 -> 55
+      console.log('A: ' + hunger) // 1st 75
       gorgeYourself();
 
       function gorgeYourself() {
         const hunger = 0;
-        // Log B: hunger
+        console.log('B: ' + hunger) // 2nd 0
       }
 
-      // Log C: hunger
+      console.log('C: ' + hunger) // 3rd 75
     };
 
     eatSnack();
 
-    hunger += 5;
-    // Log D: hunger
+    hunger += 5; // hunger reassigned to 80
+    console.log('D: ' + hunger) // 4th 80
 
-    eatSnack();
-    // Log E: hunger
+    eatSnack(); 
+    console.log('E: ' + hunger) // 5th 55
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+    {'A': 75}, 
+    {'B': 0}, 
+    {'C': 75},
+    {'D': 80},
+    {'A': 55}, 
+    {'B': 0}, 
+    {'C': 55},
+    {'E': 55}
+    ];
     return result;
 
     // Annotation:
@@ -344,24 +353,24 @@ const scope = {
   },
 
   exerciseJ() {
-    let sandwich = 'ketchup sandwich';
+    let sandwich = 'ketchup sandwich'; //reassigned to 'not a mediocre sandwich'
 
-    // Log A: sandwich
+    console.log('A: ' + sandwich) // 1st 'ketchup sandwich'
 
     const addChipotle = () => {
-      // Log B: toppings
+      console.log('B: ' + toppings) // 3rd undefined
       var toppings = 'chipotle sauce';
 
       if (toppings === 'chipotle sauce') { 
         sandwich = 'not a mediocre sandwich';
       }
 
-      // Log C: sandwich
+      console.log('C: ' + sandwich) // 4th 'not a mediocre sandwich'
     }
 
     const addCheese = () => {
       let cheeseTopping = 'gouda';
-      // Log D: cheeseTopping
+      console.log('D: ' + cheeseTopping) // 2nd 'gouda'
 
       const shesTheManReference = () => {
         amandaBynes = "National Treasure"
@@ -370,14 +379,21 @@ const scope = {
       shesTheManReference();
     }
 
-    cheeseTopping = 'kraft';
+    cheeseTopping = 'kraft'; 
     addCheese();
 
     addChipotle();
-    // Log E: sandwich
-    // Log F: amandaBynes
+    console.log('E: ' + sandwich) // 5th 'not a mediocre sandwich'
+    console.log('F: ' + amandaBynes) // 6th 'National Treasure'
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+    {'A': 'ketchup sandwich'}, 
+    {'D': 'gouda'}, 
+    {'B': undefined},
+    {'C': 'not a mediocre sandwich'},
+    {'E': 'not a mediocre sandwich'}, 
+    {'F': 'National Teasure'}
+    ];
     return result;
 
     // Annotation:
@@ -391,14 +407,17 @@ const scope = {
         if (num > 5) {
            num = 7;
         }
-        // Log A: num
+        console.log('A: ' + num)
     }
 
     foo();
 
-    // Log B: num
+    console.log('B: ' + num)
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+    {'A': 7}, 
+    {'B': 7}
+    ];
     return result;
 
     // Annotation:
@@ -406,7 +425,7 @@ const scope = {
   },
 
   exerciseL() {
-    let grade = 100;
+    let grade = 100; // reassigned to 90
 
     function losePoints() {
       grade = 90;
@@ -418,19 +437,23 @@ const scope = {
           let grade = 97;
         }
 
-        // Log A: grade
+        console.log('A: ' + grade) // 1st 95
       }
 
       addPoints();
 
-      // Log B: grade
+      console.log('B: ' + grade) // 2nd 90
     }
 
     losePoints();
 
-    // Log C: grade
+    console.log('C: ' + grade) // 3rd 90
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+    {'A': 95}, 
+    {'B': 90}, 
+    {'C': 90}
+    ];
     return result;
 
     // Annotation:
@@ -441,13 +464,13 @@ const scope = {
     var num = 5;
 
     function first() {
-      // Log A: num
+      console.log('A: ' + num) // 1st 5
       num = 6;
-      // Log B: num
+      console.log('B: ' + num) // 2nd 6
     }
 
     function second() {
-      // Log C: num
+      console.log('C: ' + num) // undefined
       let num = 7;
     }
 
@@ -456,7 +479,11 @@ const scope = {
 
     // Log D: num
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+    {'A': 5}, 
+    {'B': 6}, 
+    {'C': undefined}
+    ];
     return result;
 
     // Annotation:
@@ -468,7 +495,7 @@ const scope = {
 
     function changeInstructor() {
 
-      // Log A: instructor
+      console.log('A: ' + instructor) // 2nd 'Pam'
 
       if (instructor === 'Brittany') {
         const instructor = 'Nathaniel';
@@ -476,26 +503,33 @@ const scope = {
         let instructor = 'Brittany';
       }
 
-      // Log B: instructor
+      console.log('B: ' + instructor) // 3rd 'Pam'
 
       function rename() {
         instructor = 'Louisa';
-        // Log C: instructor
+        console.log('C: ' + instructor) // 4th 'Louisa'
       }
 
       rename();
 
-      // Log D: instructor
+      console.log('D: ' + instructor) // 5th 'Louisa'
 
     }
 
-    // Log E: instructor
+    console.log('E: ' + instructor) // 1st 'Pam'
 
     changeInstructor();
 
-    // Log F: instructor
+    console.log('F: ' + instructor) // 6th 'Louisa'
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+    {'E': 'Pam'}, 
+    {'A': 'Pam'}, 
+    {'B': 'Pam'},
+    {'C': 'Louisa'},
+    {'D': 'Louisa'}, 
+    {'F': 'Louisa'}
+    ];
     return result;
 
     // Annotation:

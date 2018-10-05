@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-
-=======
 const { instructors, cohorts } = require('./datasets/turing');
 const { constellations, stars } = require('./datasets/astronomy');
 const { cakes } = require('./datasets/cakes');
->>>>>>> 7e9eda8e34f417847e33aa6ed7958495eabb24a4
 const { pie } = require('./datasets/pie');
 const { clubs } = require('./datasets/clubs');
 const { classrooms } = require('./datasets/classrooms');
@@ -517,21 +513,33 @@ const kittyPrompts = {
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties.filter((kitty) => {
+      return kitty.color === 'orange'
+    }).map((kitty) => {
+      return kitty.name
+    });
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // 1) Given: Array
+    // 2) Need: Array
+    // 3) Use: Filter
+    // We want to use filter, because we want to return all of the kitties that have a color of orange. Once we have filtered through and found all of the kitties that are orange, we want to modify the current array to only return each kitty name. To do that we use map, and return the kitty name. 
   },
 
   sortByAge() {
     // Sort the kitties by their age
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties.sort((a, b) => {
+      return b.age < a.age
+    });
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // 1) Given: Array
+    // 2) Need: Array
+    // 3) Use: Sort
+    // We want to use the sort method, because the sort method takes in two arguements, in this case two of the kitty objects, and compares those two together. I specified that I wanted the function to sort the kitties based on their age. 
   },
 
   growUp() {
@@ -547,6 +555,11 @@ const kittyPrompts = {
     //   color: 'orange'
     // },
     // ...etc]
+
+    const result = kitties.sort((a, b) => {
+      return b.age < a.age
+    });
+      return result;
   }
 };
 
