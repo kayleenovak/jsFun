@@ -186,7 +186,8 @@ const context = {
   },
 
   exerciseJ() {
-    $('#btn').on('click', function() {
+    const el = $('#btn');
+    el.on('click', function() {
       console.log($(this));
     });
 
@@ -195,7 +196,25 @@ const context = {
     return result;
 
     // Annotation: 
+<<<<<<< HEAD
     // The value of 'this' is the btn element, because the anonymous function when invoked is being invoked as a method on the button. 
+=======
+    // Write your annotation here as a comment.
+  },
+
+  exerciseK() {
+    const el = $('#btn');
+    el.on('click', () => {
+      console.log(this);
+    });
+
+    // What is the value of `this` when a user clicks on our #btn element and the callback is triggered?
+    const result = 'REPLACE WITH YOUR RESULT HERE';
+    return result;
+
+    // Annotation: 
+    // Write your annotation here as a comment.
+>>>>>>> 568db0ab5b43ec3388877948b5afc1039e9a1cc4
   }
 
 };
