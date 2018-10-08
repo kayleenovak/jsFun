@@ -594,13 +594,25 @@ const astronomyPrompts = {
     //     lightYearsFromEarth: 640,
     //     color: 'red' }
     // ]
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = Object.keys(constellations).reduce((acc, constellation) => {
+      let oneStar = constellations[constellation].stars.forEach((star) => {
+        Object.keys(stars).forEach((indStar) => {
+          if (stars[indStar].name === star) {
+            acc.push(stars[indStar])
+          }
+        })
+      })
+      return acc
+    }, []);
     return result;
-
     // Annotation:
-    // Write your annotation here as a comment
+    // 1) Given: Object
+    // 2) Need: Array
+    // 3) Use: Reduce
+    // 4) Iterate through the contellations first
+    // Pseudo-code - Iterate through the constellations and the stars first. When looping through the stars in the contellations object, loop through the stars array and filter through the start names to match the star names in the stars array to the star names in the constellations array. 
   },
+
 
   starsByColor() {
     // Return an object with keys of the different colors of the stars,
@@ -613,14 +625,22 @@ const astronomyPrompts = {
     //   red: [{obj}]
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = Object.keys(stars).reduce((acc, star) => {
+      acc[stars[star].color] = stars.filter((indStar) => {
+        return indStar.color === stars[star].color
+      })
+      return acc
+    }, {});
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Given: Array
+    // Need: Object
+    // Use: Reduce
+    // Pseudo-Code - Iterate through the stars array and find all of the colors. Use the colors as keys in the new object. The value of the keys will be the objects that have the same color. Iterate through the individual star objects, and if the color of the star matches the key, then push the star object into the array corresponding the the color of the star. 
   },
 
-  constellationsStarsExistIn() {
+constellationsStarsExistIn() {
     // Return an array of the names of the constellations that the brightest stars are part of e.g.
     // [ 'Canis Major',
     //   'Carina',
@@ -633,11 +653,17 @@ const astronomyPrompts = {
     //   'Orion',
     //   'Centaurus' ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = stars.filter((star) => {
+      return star.constellation !== ''
+    }).map((star) => {
+      return star.constellation;
+    })
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Given: Array
+    // Need: Array
+    // Use: Filter
   }
 };
 
